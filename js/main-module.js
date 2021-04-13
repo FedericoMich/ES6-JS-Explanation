@@ -1,4 +1,4 @@
-import {add} from './util/math.js'; // Importo un modulo esterno e in particolare una sua funzione.
+import {add,sott} from './util/math.js'; // Importo un modulo esterno e in particolare una sua funzione.
 
 /**
  * Funsione ad uso dimostrativo:
@@ -9,13 +9,14 @@ import {add} from './util/math.js'; // Importo un modulo esterno e in particolar
  */
 export function callAdd (a, b) {
   // Viene usata la funzione "parseInt()" su ogni parametro per convertire il valore in formato numerico.
-  // Si rende necessario questo cast perchè i value dei tag INPUT non sono tipizzati ma solo stringhe.
-  return add (parseInt (a), parseInt (b));
+  // Si rende necessario questo cast perchè i value dei tag INPUT non sono tipizzati ma solo stringhe. 
+  return add (parseInt (a), parseInt (b)); 
 }
 
+export function callsott (a, b) {
+  return sott (parseInt (a), parseInt (b)); 
 
-
-
+}
 
 
 
