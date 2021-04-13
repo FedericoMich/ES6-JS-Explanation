@@ -1,4 +1,4 @@
-import {add,sott} from './util/math.js'; // Importo un modulo esterno e in particolare una sua funzione.
+import {add,sott,div,molt} from './util/math.js'; // Importo un modulo esterno e in particolare una sua funzione.
 
 /**
  * Funsione ad uso dimostrativo:
@@ -10,11 +10,61 @@ import {add,sott} from './util/math.js'; // Importo un modulo esterno e in parti
 export function callAdd (a, b) {
   // Viene usata la funzione "parseInt()" su ogni parametro per convertire il valore in formato numerico.
   // Si rende necessario questo cast perchè i value dei tag INPUT non sono tipizzati ma solo stringhe. 
-  return add (parseInt (a), parseInt (b)); 
+
+
+   if (isNaN(a) && isNaN(b)){
+    document.getElementById ("errormex").innerHTML= "ATTENZIONE!! entrambi i valori  non sono numerici";
+  }else if (isNaN(a)){
+    document.getElementById ("errormex").innerHTML= "ATTENZIONE!! primo valore non numerico";
+  } else if (isNaN(b)){ 
+  document.getElementById ("errormex").innerHTML= "ATTENZIONE!! secondo valore non numerico";
+  } else {
+    return add (parseInt (a), parseInt (b)); 
+
+  }
+ 
+ 
 }
 
 export function callsott (a, b) {
-  return sott (parseInt (a), parseInt (b)); 
+  if (isNaN(a) && isNaN(b)){
+    document.getElementById ("errormex").innerHTML= "ATTENZIONE!! entrambi i valori  non sono numerici";
+  }else if (isNaN(a)){
+    document.getElementById ("errormex").innerHTML= "ATTENZIONE!! primo valore non numerico";
+  } else if (isNaN(b)){ 
+  document.getElementById ("errormex").innerHTML= "ATTENZIONE!! secondo valore non numerico";
+  } else {
+    return sott (parseInt (a), parseInt (b)); 
+
+  }
+
+}
+
+export function calldiv (a, b) {
+  if (isNaN(a) && isNaN(b)){
+    document.getElementById ("errormex").innerHTML= "ATTENZIONE!! entrambi i valori  non sono numerici";
+  }else if (isNaN(a)){
+    document.getElementById ("errormex").innerHTML= "ATTENZIONE!! primo valore non numerico";
+  } else if (isNaN(b)){ 
+  document.getElementById ("errormex").innerHTML= "ATTENZIONE!! secondo valore non numerico";
+  } else {
+    return div (parseInt (a), parseInt (b)); 
+
+  }
+
+}
+
+export function callmolt (a, b) {
+  if (isNaN(a) && isNaN(b)){
+    document.getElementById ("errormex").innerHTML= "ATTENZIONE!! entrambi i valori  non sono numerici";
+  }else if (isNaN(a)){
+    document.getElementById ("errormex").innerHTML= "ATTENZIONE!! primo valore non numerico";
+  } else if (isNaN(b)){ 
+  document.getElementById ("errormex").innerHTML= "ATTENZIONE!! secondo valore non numerico";
+  } else {
+    return molt (parseInt (a), parseInt (b)); 
+
+  }
 
 }
 

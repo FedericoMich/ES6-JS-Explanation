@@ -14,12 +14,14 @@
 <body>
     <script type="module">
         // Importo una funzione all'interno di un modulo ES6 esterno
-        import {callAdd, callsott} from "./js/main-module.js";
+        import {callAdd, callsott,calldiv,callmolt} from "./js/main-module.js";
 
         // Per rendere accessibile la funzione importata (callAdd) al di fuori del modulo (module scope)
         // occorre renderla globale (Global) assegnandola all'oggetto window.
         window.callAdd=callAdd;
         window.callsott=callsott;
+        window.calldiv=calldiv;
+        window.callmolt=callmolt;
     </script>
     <script>
         /*
@@ -53,6 +55,26 @@
             document.getElementById('valore').innerHTML=result;
         }
 
+        function calcoladiv() {
+            
+            const a=document.getElementById('a').value;
+            const b=document.getElementById('b').value;
+
+            const result=window.calldiv(a,b);
+
+            document.getElementById('valore').innerHTML=result;
+        }
+
+        function calcolamolt() {
+            
+            const a=document.getElementById('a').value;
+            const b=document.getElementById('b').value;
+
+            const result=window.callmolt(a,b);
+
+            document.getElementById('valore').innerHTML=result;
+        }
+
         const addUlLI = () => window.addListElements();
         const removeUlLI = () => window.removeListElements();
         
@@ -70,14 +92,19 @@
         </div>
         <button onclick="calcola()" class="btn btn-primary mb-3">Somma</button>
         <button onclick="calcolasott()" class="btn btn-primary mb-3">Sottrai</button>
+        <button onclick="calcoladiv()" class="btn btn-primary mb-3">Dividi</button>
+        <button onclick="calcolamolt()" class="btn btn-primary mb-3">Moltiplica</button>
+        
         <button onclick="addUlLI()" class="btn btn-primary mb-3">Aggiungi Elementi</button>
         <button onclick="removeUlLI()" class="btn btn-primary mb-3">Rimuovi Elementi</button>
-        <div class="alert alert-success" role="alert">
-            <div class="alert alert-warning" role="alert">
-                A simple warning alert—check it out!
-              </div>
+        <div class="alert alert-success" role="alert">            
             Risultato: <span id="valore" style="font-weight: bold;"></span>
+           
         </div>
+        <div class="alert alert-warning" role="alert">
+            <p id= errormex>Eventuali errori:</p>
+          </div>
+        
         <ul id="myList">
 
         </ul>
