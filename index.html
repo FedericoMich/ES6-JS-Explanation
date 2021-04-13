@@ -14,11 +14,12 @@
 <body>
     <script type="module">
         // Importo una funzione all'interno di un modulo ES6 esterno
-        import {callAdd} from "./js/main-module.js";
+        import {callAdd, callsott} from "./js/main-module.js";
 
         // Per rendere accessibile la funzione importata (callAdd) al di fuori del modulo (module scope)
         // occorre renderla globale (Global) assegnandola all'oggetto window.
         window.callAdd=callAdd;
+        window.callsott=callsott;
     </script>
     <script>
         /*
@@ -41,6 +42,17 @@
             document.getElementById('valore').innerHTML=result;
         }
 
+
+        function calcolasott() {
+            
+            const a=document.getElementById('a').value;
+            const b=document.getElementById('b').value;
+
+            const result=window.callsott(a,b);
+
+            document.getElementById('valore').innerHTML=result;
+        }
+
         const addUlLI = () => window.addListElements();
         const removeUlLI = () => window.removeListElements();
         
@@ -57,9 +69,13 @@
             <input id="b" class="form-control">
         </div>
         <button onclick="calcola()" class="btn btn-primary mb-3">Somma</button>
+        <button onclick="calcolasott()" class="btn btn-primary mb-3">Sottrai</button>
         <button onclick="addUlLI()" class="btn btn-primary mb-3">Aggiungi Elementi</button>
         <button onclick="removeUlLI()" class="btn btn-primary mb-3">Rimuovi Elementi</button>
         <div class="alert alert-success" role="alert">
+            <div class="alert alert-warning" role="alert">
+                A simple warning alert—check it out!
+              </div>
             Risultato: <span id="valore" style="font-weight: bold;"></span>
         </div>
         <ul id="myList">
