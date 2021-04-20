@@ -9,12 +9,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <title>ES6 Modules</title>
+
+    <style>
+
+        #img {
+            padding-bottom: 10px;
+            padding-right: 10px;
+            height: 150px;
+        }
+
+    </style>
 </head>
 
 <body>
     <script type="module">
         // Importo una funzione all'interno di un modulo ES6 esterno
-        import {callAdd, callsott,calldiv,callmolt} from "./js/main-module.js";
+        import {callAdd, callsott,calldiv,callmolt, addItem, addimg, removeimg, removetext} from "./js/main-module.js";
 
         // Per rendere accessibile la funzione importata (callAdd) al di fuori del modulo (module scope)
         // occorre renderla globale (Global) assegnandola all'oggetto window.
@@ -22,6 +32,11 @@
         window.callsott=callsott;
         window.calldiv=calldiv;
         window.callmolt=callmolt;
+        window.addItem = addItem;
+        window.addimg = addimg;
+        window.removeimg =removeimg;
+        window.removetext=removetext;
+
     </script>
     <script>
         /*
@@ -95,8 +110,15 @@
         <button onclick="calcoladiv()" class="btn btn-primary mb-3">Dividi</button>
         <button onclick="calcolamolt()" class="btn btn-primary mb-3">Moltiplica</button>
         
-        <button onclick="addUlLI()" class="btn btn-primary mb-3">Aggiungi Elementi</button>
-        <button onclick="removeUlLI()" class="btn btn-primary mb-3">Rimuovi Elementi</button>
+        
+        <button onclick="addimg()" class="btn btn-primary mb-3">Aggiungi Immagine</button>
+        <div id="imgid"></div>
+
+        <button onclick="removeimg()" class="btn btn-primary mb-3">Rimuovi Immagine</button>
+
+        <button onclick="addItem()" class="btn btn-primary mb-3">Aggiungi Elementi</button>
+        <button onclick="removetext()" class="btn btn-primary mb-3">Rimuovi Elementi</button>
+
         <div class="alert alert-success" role="alert">            
             Risultato: <span id="valore" style="font-weight: bold;"></span>
            

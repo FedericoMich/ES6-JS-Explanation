@@ -72,6 +72,58 @@ export function callmolt (a, b) {
 
 
 
+export function addItem(){
+  const ul = document.getElementById("myList");
+  const li = document.createElement("li");
+
+  li.setAttribute('id','mylist-li');
+
+  li.appendChild(
+    document.createTextNode('Nuovo Elemento lista')
+  );
+  ul.appendChild(li);
+
+}
+
+
+export function removetext(){
+  const ul = document.getElementById("myList");
+  const li = document.getElementById('mylist-li');
+  ul.removeChild(li);
+}
+
+
+
+export function addimg(){
+ 
+  const imgid = document.getElementById("imgid");
+
+  const img = document.createElement("img");
+
+  img.src = "./img/js_img.png";
+
+  img.setAttribute('id','img');
+
+  imgid.appendChild(img);
+
+}
+
+export function removeimg(){
+
+  const img = document.getElementById("img");
+
+  img.parentNode.removeChild(img);
+ 
+
+}
+
+
+
+
+
+
+
+
 
 
 
