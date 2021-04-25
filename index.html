@@ -25,6 +25,7 @@
     <script type="module">
         // Importo una funzione all'interno di un modulo ES6 esterno
         import {callAdd, callsott,calldiv,callmolt, addItem, addimg, removeimg, removetext} from "./js/main-module.js";
+        import{elaboraElemento} from "./js/util/cicloForEach.js";
 
         // Per rendere accessibile la funzione importata (callAdd) al di fuori del modulo (module scope)
         // occorre renderla globale (Global) assegnandola all'oggetto window.
@@ -36,6 +37,8 @@
         window.addimg = addimg;
         window.removeimg =removeimg;
         window.removetext=removetext;
+        window.elaboraElemento=elaboraElemento;
+       // window.elaboraElemento=elaboraElemento;
 
     </script>
     <script>
@@ -92,6 +95,13 @@
 
         const addUlLI = () => window.addListElements();
         const removeUlLI = () => window.removeListElements();
+
+        function stampaElemento(){
+
+            const imag = window.elaboraElemento
+
+            document.getElementById("stampaImmagini").innerHTML=elaboraElemento;
+        }
         
     </script>
 
@@ -112,7 +122,7 @@
         
         
         <button onclick="addimg()" class="btn btn-primary mb-3">Aggiungi Immagine</button>
-        <div id="imgid"></div>
+        
 
         <button onclick="removeimg()" class="btn btn-primary mb-3">Rimuovi Immagine</button>
 
@@ -126,10 +136,18 @@
         <div class="alert alert-warning" role="alert">
             <p id= errormex>Eventuali errori:</p>
           </div>
+
+          <div id="imgid">
+          </div>
+
         
         <ul id="myList">
 
         </ul>
+
+        <div id ="stampaImmagini">
+        
+        </div>
     </div>
 
 
