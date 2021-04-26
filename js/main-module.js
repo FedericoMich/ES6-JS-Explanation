@@ -118,6 +118,55 @@ export function removeimg(){
 }
 
 
+export function elaboraElemento(){
+   
+  const arrImages = [
+      {
+          name: 'Immagine 1',
+          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+      },
+      {
+          name: 'Immagine 2',
+          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+      },
+      {
+          name: 'Immagine 3',
+          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+      },
+      {
+          name: 'Immagine 4',
+          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+      },
+      {
+          name: 'Immagine 5',
+          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+      },
+      {
+          name: 'Immagine 6',
+          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+      },
+      {
+          name: 'Immagine 7',
+          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+      },
+      {
+        name: 'Immagine 8',
+        src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+    }
+  ]
+  arrImages.forEach(function(image){
+      let img = document.createElement('img');
+      img.setAttribute("id","myFilm");
+      img.src=image.src;
+      img.height = "100";
+      img.weidth = "100";
+      document.body.appendChild(img);
+
+  });
+}
+
+
+
 
 
 

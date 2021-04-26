@@ -18,14 +18,23 @@
             height: 150px;
         }
 
+        #stampaImmagini {
+            margin: 10% ;
+            float: left;
+            padding: 10%;
+
+        }
+
     </style>
 </head>
 
-<body>
+<body onload="elaboraElemento()">
+
+    
     <script type="module">
         // Importo una funzione all'interno di un modulo ES6 esterno
-        import {callAdd, callsott,calldiv,callmolt, addItem, addimg, removeimg, removetext} from "./js/main-module.js";
-        import{elaboraElemento} from "./js/util/cicloForEach.js";
+        import {callAdd, callsott,calldiv,callmolt, addItem, addimg, removeimg, removetext,elaboraElemento} from "./js/main-module.js";
+        
 
         // Per rendere accessibile la funzione importata (callAdd) al di fuori del modulo (module scope)
         // occorre renderla globale (Global) assegnandola all'oggetto window.
