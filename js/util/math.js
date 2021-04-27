@@ -5,21 +5,13 @@
  * @param  {} a primo valore 
  * @param  {} b secondo valore
  */
-export function add(a, b) {  
-    return a + b;
+ export const add = (a,b) => a+b;
 
-}
-export function sott(a, b) {       
-      return a - b;
-  }
+ export const sott = (a,b) => a-b;
 
-export function div(a, b) {       
-    return a / b;
-}
+ export const div = (a,b) => a/b;
 
-export function molt(a, b) {       
-    return a * b;
-}
+ export const molt = (a,b) => a*b;
 
 
 //TODO: Add arrow function version

@@ -26,6 +26,7 @@ export function callAdd (a, b) {
  
 }
 
+
 export function callsott (a, b) {
   if (isNaN(a) && isNaN(b)){
     document.getElementById ("errormex").innerHTML= "ATTENZIONE!! entrambi i valori  non sono numerici";
@@ -69,26 +70,19 @@ export function callmolt (a, b) {
 }
 
 
-
-
-
-export function addItem(){
-  const ul = document.getElementById("myList");
-  const li = document.createElement("li");
-
-  li.setAttribute('id','mylist-li');
-
-  li.appendChild(
-    document.createTextNode('Nuovo Elemento lista')
-  );
-  ul.appendChild(li);
-
+export const addItem = () => {
+  
+  const ul = document.getElementById("myList"); //prendo la ul con quell'id
+  const li=document.createElement('li'); //creo la li
+  li.setAttribute('id', 'mylist-item'); //setto attributo id alla li dandogli l'id 'mylist-item'
+  li.appendChild(document.createTextNode('Nuovo elemento')); //creo un child alla li che è testo e dice "elemento lista"
+  ul.appendChild(li); //aggiungo il child alla li
 }
 
 
-export function removetext(){
-  const ul = document.getElementById("myList");
-  const li = document.getElementById('mylist-li');
+export const removetext = () => {
+  const ul=document.getElementById("myList");
+  const li=document.getElementById("mylist-item");
   ul.removeChild(li);
 }
 
@@ -120,51 +114,62 @@ export function removeimg(){
 
 export function elaboraElemento(){
    
-  const arrImages = [
-      {
-          name: 'Immagine 1',
-          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
-      },
-      {
-          name: 'Immagine 2',
-          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
-      },
-      {
-          name: 'Immagine 3',
-          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
-      },
-      {
-          name: 'Immagine 4',
-          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
-      },
-      {
-          name: 'Immagine 5',
-          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
-      },
-      {
-          name: 'Immagine 6',
-          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
-      },
-      {
-          name: 'Immagine 7',
-          src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
-      },
-      {
-        name: 'Immagine 8',
-        src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
-    }
-  ]
   arrImages.forEach(function(image){
       let img = document.createElement('img');
       img.setAttribute("id","myFilm");
       img.src=image.src;
-      img.height = "100";
-      img.weidth = "100";
+      img.height = "120";
+      img.weidth = "120";
       document.body.appendChild(img);
 
   });
 }
 
+
+const arrImages = [
+  {
+      name: 'Immagine 1',
+      src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+  },
+  {
+      name: 'Immagine 2',
+      src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+  },
+  {
+      name: 'Immagine 3',
+      src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+  },
+  {
+      name: 'Immagine 4',
+      src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+  },
+  {
+      name: 'Immagine 5',
+      src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+  },
+  {
+      name: 'Immagine 6',
+      src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+  },
+  {
+      name: 'Immagine 7',
+      src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+  },
+  {
+    name: 'Immagine 8',
+    src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+},
+{
+  name: 'Immagine 9',
+  src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+}
+,
+{
+  name: 'Immagine 10',
+  src: 'https://www.itstechtalentfactory.it/wp-content/uploads/2018/08/itssys.jpg'
+}
+
+]
 
 
 
