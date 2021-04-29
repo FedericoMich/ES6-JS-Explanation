@@ -37,8 +37,8 @@
     
     <script type="module">
         // Importo una funzione all'interno di un modulo ES6 esterno
-        import {callAdd, callsott,calldiv,callmolt, addItem, addimg, removeimg, removetext,elaboraElemento} from "./js/main-module.js";
-        
+        import {callAdd, callsott,calldiv,callmolt, addItem, addimg, removeimg, removetext,elaboraElemento, film} from "./js/main-module.js";
+    
 
         // Per rendere accessibile la funzione importata (callAdd) al di fuori del modulo (module scope)
         // occorre renderla globale (Global) assegnandola all'oggetto window.
@@ -50,7 +50,9 @@
         window.addimg = addimg;
         window.removeimg =removeimg;
         window.removetext=removetext;
-        window.elaboraElemento=elaboraElemento;    
+        window.elaboraElemento=elaboraElemento;
+        window.film=film;
+        
         
     </script>
     <script>
@@ -134,6 +136,8 @@
         
         
         <button onclick="addimg()" class="btn btn-primary mb-3">Aggiungi Immagine</button>
+
+        <button onclick="window.film()" class="btn btn-primary mb-3">Aggiungi promise</button>
         
 
         <button onclick="removeimg()" class="btn btn-primary mb-3">Rimuovi Immagine</button>

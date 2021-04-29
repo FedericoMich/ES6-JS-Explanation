@@ -172,6 +172,33 @@ const arrImages = [
 ]
 
 
+export const film = () => {
+
+const promiseFetch = fetch('http://www.omdbapi.com/?s=%27blade%20runner%27&apikey=4fb63998');
+console.info (promiseFetch);
+
+promiseFetch
+  .then(
+      res => {
+          if(res) return res.json ();
+      })
+
+  .then(arrjson => {
+   // console.log(resjson.Title);
+   //console.log(resjson.Year);
+  arrjson.Search.forEach(stampa); 
+  
+  })
+  .catch(err => {
+      console.error(err);
+  })
+ 
+};
+
+const stampa = (item) => {
+  console.log(item.Title);
+  console.log(item.Year);
+}
 
 
 
